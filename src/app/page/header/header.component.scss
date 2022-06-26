@@ -1,0 +1,57 @@
+header {
+    height: 80px;
+    background: #020202;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.body {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        height: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: #F4F4F4;
+    }
+
+    .logo-image {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 60px;
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: 1000;
+        }
+    }
+
+    .welcome {
+        height: 100%;
+        color: #F4F4F4;
+        display: flex;
+        align-items: center;
+
+        p {
+            margin-right: 10px;
+        }
+    }
+}
