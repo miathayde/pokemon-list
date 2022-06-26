@@ -1,1 +1,21 @@
-<p>initial-page works!</p>
+<div class="container">
+    <div class="title">
+        <p>Fase teste prático Front_end</p>
+        <p>Pokebusca</p>
+    </div>
+
+    <hr>
+
+    <div class="quantity-elements">
+        <p>Exibindo {{minElement}} de {{maxElement}} itens</p>
+    </div>
+
+    <hr>
+
+    <div class="elements row" *ngFor="let row of pokemonList.results">
+        <div class="col-3" style="margin: 0 0 15px;">
+            <img [src]="pokemonImage" alt="pokemon">
+        </div>
+        <hr>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.container {
+    background: #FFFFFF;
+    min-height: 100vh;
+    width: auto;
+    margin-left: 64px;
+    padding: 0 28px 0;
+
+    .title {
+        padding-top: 86px;
+
+        p:first-child {
+            color: #000000DE;
+            font-size: 28px;
+            line-height: 44px;
+            margin-bottom: 0;
+        }
+        p:last-child {
+            font-weight: 400;
+            margin-top: 8px;
+            font-size: 19px;
+        }
+    }
+
+    hr {
+        border-top: 1px solid #BDBDBD;
+    }
+
+    .quantity-elements {
+        p {
+            font-size: 14px;
+            color: #00000099;
+            font-weight: 400;
+        }
+    }
+
+    .elements {
+        padding: 0 14px 0;
+        
+        img {
+            border: 1px solid #565656;
+            border-radius: 4px;
+        }
+    }
+}
