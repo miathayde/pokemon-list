@@ -26,24 +26,24 @@
     </div>
 
     <div class="pages">
-        <p>1 de 4 páginas</p>
+        <p>1 de {{totalPages}} páginas</p>
         <div class="arrows">
-            <button type="button" class="btn btn-link" [disabled]="!pokemonList.previous">
+            <button type="button" class="btn btn-link" [disabled]="!pokemonList.previous" (click)="firstOrLastPage('first')">
                 <span class="material-symbols-outlined">
                     first_page
                 </span>
             </button>
-            <button type="button" class="btn btn-link" [disabled]="!pokemonList.previous">
+            <button type="button" class="btn btn-link" [disabled]="!pokemonList.previous" (click)="changePage('previous')">
                 <span class="material-symbols-outlined">
                     chevron_left
                 </span>
             </button>
-            <button type="button" class="btn btn-link" [disabled]="!pokemonList.next">
+            <button type="button" class="btn btn-link" [disabled]="!pokemonList.next" (click)="changePage('next')">
                 <span class="material-symbols-outlined">
                     chevron_right
                 </span>
             </button>
-            <button type="button" class="btn btn-link" [disabled]="!pokemonList.next">
+            <button type="button" class="btn btn-link" [disabled]="!pokemonList.next" (click)="firstOrLastPage('last')">
                 <span class="material-symbols-outlined">
                     last_page
                 </span>
