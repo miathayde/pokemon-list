@@ -28,26 +28,26 @@
     <div class="pages">
         <p>1 de 4 páginas</p>
         <div class="arrows">
-            <a href="#">
+            <button type="button" class="btn btn-link" [disabled]="!pokemonList.previous">
                 <span class="material-symbols-outlined">
                     first_page
                 </span>
-            </a>
-            <a href="#">
+            </button>
+            <button type="button" class="btn btn-link" [disabled]="!pokemonList.previous">
                 <span class="material-symbols-outlined">
                     chevron_left
                 </span>
-            </a>
-            <a href="#">
+            </button>
+            <button type="button" class="btn btn-link" [disabled]="!pokemonList.next">
                 <span class="material-symbols-outlined">
                     chevron_right
                 </span>
-            </a>
-            <a href="#">
+            </button>
+            <button type="button" class="btn btn-link" [disabled]="!pokemonList.next">
                 <span class="material-symbols-outlined">
                     last_page
                 </span>
-            </a>
+            </button>
         </div>
     </div>
 </div>
