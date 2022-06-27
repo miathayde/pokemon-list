@@ -48,7 +48,7 @@ export class InitialPageComponent implements OnInit {
       }
     );
 
-    if(this.pageInEndpoint % 20 != 0) {
+    if(page == 'previous') {
       this.currentPage -= 1;
     } else {
       this.currentPage = this.currentPage + 1;
