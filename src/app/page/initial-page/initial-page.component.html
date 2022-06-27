@@ -12,10 +12,42 @@
 
     <hr>
 
-    <div class="elements row" *ngFor="let row of pokemonList.results">
-        <div class="col-3" style="margin: 0 0 15px;">
-            <img [src]="pokemonImage" alt="pokemon">
+    <div class="elements" *ngFor="let item of pokemonList.results">
+        <div class="element-item">
+            <div class="image">
+                <img [src]="pokemonImage" alt="pokemon">
+            </div>
+            <div class="description">
+                <p>{{item.name | titlecase}}</p>
+                <p>Características do pokemon dolor sit amet, consectetur adipiscing elit. In ultricies nunc at odio tempor tincidunt. Sed sit amet dolor velit. Donec convallis tellus ut porta molestie. Suspendisse condimentum et dui in aliquam.</p>
+            </div>
         </div>
         <hr>
+    </div>
+
+    <div class="pages">
+        <p>1 de 4 páginas</p>
+        <div class="arrows">
+            <a href="#">
+                <span class="material-symbols-outlined">
+                    first_page
+                </span>
+            </a>
+            <a href="#">
+                <span class="material-symbols-outlined">
+                    chevron_left
+                </span>
+            </a>
+            <a href="#">
+                <span class="material-symbols-outlined">
+                    chevron_right
+                </span>
+            </a>
+            <a href="#">
+                <span class="material-symbols-outlined">
+                    last_page
+                </span>
+            </a>
+        </div>
     </div>
 </div>
