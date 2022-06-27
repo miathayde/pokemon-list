@@ -9,9 +9,9 @@ import { PokemonListService } from 'src/app/service/pokemon-list.service';
 })
 export class InitialPageComponent implements OnInit {
 
-  minElement: number = 1;
   maxElement: number;
-  currentPage: number = 0;
+  currentPage: number = 1;
+  pageInEndpoint: number = 0;
   totalPages: number;
   totalPagesNotRound: number;
   pokemonList: PokemonListModel = new PokemonListModel();
@@ -24,7 +24,7 @@ export class InitialPageComponent implements OnInit {
   }
 
   getList() {
-    this.service.getList(this.currentPage).subscribe(
+    this.service.getList(this.pageInEndpoint).subscribe(
       result => {
         this.pokemonList = result;
         this.maxElement = this.pokemonList.count;
@@ -38,27 +38,39 @@ export class InitialPageComponent implements OnInit {
   }
 
   changePage(page: string) {
-    page == 'previous' ? this.currentPage -= 20 : this.currentPage += 20;
+    page == 'previous' ? this.pageInEndpoint -= 20 : this.pageInEndpoint += 20;
     
-    this.service.getList(this.currentPage).subscribe(
+    this.service.getList(this.pageInEndpoint).subscribe(
       result => {
         this.pokemonList = result;
         this.maxElement = this.pokemonList.count;
         console.log(this.pokemonList)
       }
     );
+
+    if(this.pageInEndpoint % 20 != 0) {
+      this.currentPage -= 1;
+    } else {
+      this.currentPage = this.currentPage + 1;
+    }
   }
 
   firstOrLastPage(page: string) {
-    page == 'first' ? this.currentPage = 0 : this.currentPage = this.maxElement - this.getDecimalNumber(this.totalPagesNotRound);
-
-    this.service.getList(this.currentPage).subscribe(
+    page == 'first' ? this.pageInEndpoint = 0 : this.pageInEndpoint = this.maxElement - this.getDecimalNumber(this.totalPagesNotRound);
+    console.log(this.currentPage);
+    this.service.getList(this.pageInEndpoint).subscribe(
       result => {
         this.pokemonList = result;
         this.maxElement = this.pokemonList.count;
         console.log(this.pokemonList)
       }
     );
+
+    if(page == 'last') {
+      this.currentPage = this.totalPages;
+    } else {
+      this.currentPage = 1;
+    }
   }
 
   getDecimalNumber(item: number): number {
@@ -69,5 +81,4 @@ export class InitialPageComponent implements OnInit {
 
     return item;
   }
-  
 }

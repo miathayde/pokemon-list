@@ -7,7 +7,7 @@
     <hr>
 
     <div class="quantity-elements">
-        <p>Exibindo {{minElement}} de {{maxElement}} itens</p>
+        <p>Exibindo 20 de {{maxElement}} itens</p>
     </div>
 
     <hr>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="pages">
-        <p>1 de {{totalPages}} páginas</p>
+        <p>{{currentPage}} de {{totalPages}} páginas</p>
         <div class="arrows">
             <button type="button" class="btn btn-link" [disabled]="!pokemonList.previous" (click)="firstOrLastPage('first')">
                 <span class="material-symbols-outlined">
