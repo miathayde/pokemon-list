@@ -14,6 +14,10 @@ export class PokemonListService {
         return this.http.get<PokemonListModel>(`${this.API}pokemon/?offset=${page}&limit=20`);
     }
 
+    getAll(all: number) {
+        return this.http.get<PokemonListModel>(`${this.API}pokemon/?offset=null&limit=${all}"`);
+    }
+
     getPokemonByNameOrId(nameOrId: string) {
         return this.http.get(`${this.API}pokemon/${nameOrId}`);
     }

@@ -5,19 +5,31 @@
     margin-left: 64px;
     padding: 0 28px 0;
 
-    .title {
-        padding-top: 86px;
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 90px;
 
-        p:first-child {
-            color: #000000DE;
-            font-size: 28px;
-            line-height: 44px;
-            margin-bottom: 0;
+        .title {
+            p:first-child {
+                color: #000000DE;
+                font-size: 28px;
+                line-height: 44px;
+                margin-bottom: 0;
+            }
+            p:last-child {
+                font-weight: 400;
+                margin-top: 8px;
+                font-size: 19px;
+            }
         }
-        p:last-child {
-            font-weight: 400;
-            margin-top: 8px;
-            font-size: 19px;
+
+        ::-webkit-input-placeholder { 
+            font-family: 'Material Icons';
+            font-weight: 900;
+            font-size: 17px;
+            text-align: end;
         }
     }
 

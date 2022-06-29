@@ -1,13 +1,19 @@
 <div class="container">
-    <div class="title">
-        <p>Fase teste prático Front_end</p>
-        <p>Pokebusca</p>
+    <div class="header">
+        <div class="title">
+            <p>Fase teste prático Front_end</p>
+            <p>Pokebusca</p>
+        </div>
+        <div class="search">
+            <input type="text" class="form-control" id="search" placeholder="&#xe8b6;"
+            [(ngModel)]="search" (ngModelChange)="getSearch(search)">
+        </div>
     </div>
 
     <hr>
 
     <div class="quantity-elements">
-        <p>Exibindo 20 de {{maxElement}} itens</p>
+        <p>Exibindo {{itensPerPage}} de {{maxElement}} itens</p>
     </div>
 
     <hr>
@@ -25,7 +31,7 @@
         <hr>
     </div>
 
-    <div class="pages">
+    <div class="pages" *ngIf="!inSearch">
         <p>{{currentPage}} de {{totalPages}} páginas</p>
         <div class="arrows">
             <button type="button" class="btn btn-link" [disabled]="!pokemonList.previous" (click)="firstOrLastPage('first')">
