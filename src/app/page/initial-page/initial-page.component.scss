@@ -63,8 +63,14 @@
         .description {
             width: 65rem;
 
-            p:first-child {
+            a {
                 font-weight: 700;
+                color: #4a4a4a;
+                cursor: pointer;
+            }
+            a:hover {
+                color: #ff5800;
+                text-decoration: underline;
             }
         }
     }
